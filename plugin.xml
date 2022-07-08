@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="tester-plugin" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="tester-plugin" version="0.1.3">
     <name>tester-plugin</name>
     <description>tester-plugin</description>
     <license>SEE LICENSE</license>
@@ -26,8 +26,8 @@
 
         <source-file src="android/src/main/java/com/itmikes/testerplugin/TesterPlugin.java" target-dir="src/com/itmikes/testerplugin"/>
         <source-file src="android/src/main/java/com/itmikes/testerplugin/Tester.java" target-dir="src/com/itmikes/testerplugin"/>
-
     </platform>
+
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
