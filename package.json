@@ -1,6 +1,6 @@
 {
   "name": "tester-plugin",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Tester plugin",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,9 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "TesterPlugin.podspec"
+    "TesterPlugin.podspec",
+    "cordova/",
+    "plugin.xml"
   ],
   "author": "Mike Summerfeldt",
   "license": "MIT",
@@ -74,5 +76,11 @@
     "android": {
       "src": "android"
     }
+  },
+  "cordova": {
+    "id": "tester-plugin",
+    "platforms": [
+      "android"
+    ]
   }
 }

@@ -6,6 +6,6 @@ public class Tester {
 
     public String echo(String value) {
         Log.i("Echo", value);
-        return value;
+        return "NATIVE(Android)-" + value;
     }
 }

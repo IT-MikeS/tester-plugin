@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="tester-plugin" version="0.0.1">
+    <name>tester-plugin</name>
+    <description>tester-plugin</description>
+    <license>SEE LICENSE</license>
+    <keywords>Ionic,capacitor,tester</keywords>
+    <repo>git+https://github.com/ionic-team/capacitor.git</repo>
+    <issue>https://ionic.zendesk.com/hc/en-us</issue>
+
+    <js-module src="cordova/www/tester.js" name="tester">
+        <runs/>
+        <clobbers target="Tester"/>
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Tester">
+                <param name="android-package" value="com.itmikes.testerplugin.TesterPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET"/>
+        </config-file>
+
+        <framework src="cordova/src/android/tester.gradle" custom="true" type="gradleReference" />
+
+        <source-file src="android/src/main/java/com/itmikes/testerplugin/TesterPlugin.java" target-dir="src/com/itmikes/testerplugin"/>
+        <source-file src="android/src/main/java/com/itmikes/testerplugin/Tester.java" target-dir="src/com/itmikes/testerplugin"/>
+
+    </platform>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Tester">
+                <param name="ios-package" value="Tester" onload="true"/>
+            </feature>
+            <preference name="UseSwiftLanguageVersion" value="4.2"/>
+        </config-file>
+
+        <source-file src="cordova/src/ios/TesterPlugin.swift"/>
+        <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+    </platform>
+
+    <author email="hi@ionic.io" href="https://ionicframework.com">Ionic Team</author>
+</plugin>
