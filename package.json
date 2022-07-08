@@ -1,6 +1,6 @@
 {
   "name": "tester-plugin",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Tester plugin",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
