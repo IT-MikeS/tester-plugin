@@ -15,6 +15,8 @@ public class TesterPlugin extends Plugin {
     public void echo(PluginCall call) {
         String value = call.getString("value");
 
+        System.out.println("WOW such print");
+
         JSObject ret = new JSObject();
         ret.put("value", implementation.echo(value));
         call.resolve(ret);
