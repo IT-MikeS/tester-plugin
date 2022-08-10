@@ -15,7 +15,7 @@ public class TesterPlugin extends Plugin {
     public void echo(PluginCall call) {
         String value = call.getString("value");
 
-        System.out.println(this.bridge.getConfig().getPluginConfiguration("Tester").getString("logOnLoad"));
+        System.out.println(getConfig().getString("logOnLoad"));
 
         JSObject ret = new JSObject();
         ret.put("value", implementation.echo(value));
