@@ -4,11 +4,13 @@ import type { TesterPlugin } from './definitions';
 
 let TesterImpl;
 
-console.log(`(window as any).Tester !== undefined: ${(window as any).Tester !== undefined}`)
-
-if ((window as any).Tester !== undefined) {
+if ((window as any).cordova !== undefined && (window as any).cordova.platformVersion !== '1.0.0') {
   console.log('Loading Cordova based TesterPlugin.');
-  TesterImpl = (window as any).Tester;
+  TesterImpl = new Proxy({}, {
+    get(_target, property) {
+      return (window as any).Tester[property];
+    }
+  });
 } else {
   console.log('Loading Capacitor based TesterPlugin.');
   TesterImpl = registerPlugin<TesterPlugin>('Tester', {
@@ -16,7 +18,7 @@ if ((window as any).Tester !== undefined) {
   });
 }
 
-const Tester = TesterImpl;
+const Tester = TesterImpl as TesterPlugin;
 
 export * from './definitions';
 export { Tester };
