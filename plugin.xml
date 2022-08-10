@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="tester-plugin" version="0.2.7">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="tester-plugin" version="0.2.8">
     <name>tester-plugin</name>
     <description>tester-plugin</description>
     <license>SEE LICENSE</license>
