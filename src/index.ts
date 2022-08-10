@@ -4,9 +4,9 @@ import type { TesterPlugin } from './definitions';
 
 let TesterImpl;
 
-console.log(`(window as any).CapacitorCompat !== undefined: ${(window as any).CapacitorCompat !== undefined}`)
+console.log(`(window as any).Tester !== undefined: ${(window as any).Tester !== undefined}`)
 
-if ((window as any).CapacitorCompat !== undefined) {
+if ((window as any).Tester !== undefined) {
   console.log('Loading Cordova based TesterPlugin.');
   TesterImpl = (window as any).Tester;
 } else {

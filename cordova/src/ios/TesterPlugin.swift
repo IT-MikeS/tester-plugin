@@ -11,6 +11,10 @@ public class TesterPlugin: CAPPlugin {
 
     @objc func echo(_ command: CDVInvokedUrlCommand) {
         let call = createCall(command)
+
+        let cfg = getConfig()
+        print("cfg:")
+        print(cfg)
     
         let value = call.getString("value") ?? ""
         call.resolve([
