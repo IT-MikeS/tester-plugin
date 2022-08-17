@@ -11,7 +11,7 @@ public class TesterPlugin: CAPPlugin {
     @objc func echo(_ command: CDVInvokedUrlCommand) {
         let call = createCall(command)
     
-        print("[logOnEcho]: " + (cfg.getString("logOnEcho") ?? ""))
+        print("[logOnEcho]: " + (getConfig("Tester").getString("logOnEcho") ?? ""))
 
         let value = call.getString("value") ?? ""
         call.resolve([
