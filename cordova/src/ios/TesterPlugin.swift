@@ -6,13 +6,13 @@ public class TesterPlugin: CAPPlugin {
 
     override public func pluginInitialize() {
         super.pluginInitialize()
-        let cfg = getConfig("Tester")
-        print("[logOnLoad]: " + (cfg.getString("logOnLoad") ?? "No logOnLoad set."))
     }
 
     @objc func echo(_ command: CDVInvokedUrlCommand) {
         let call = createCall(command)
     
+        print("[logOnEcho]: " + (cfg.getString("logOnEcho") ?? ""))
+
         let value = call.getString("value") ?? ""
         call.resolve([
             "value": implementation.echo(value)
